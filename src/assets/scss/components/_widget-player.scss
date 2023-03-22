@@ -12,9 +12,9 @@
 		--media-width: 7.4rem;
 	}
 
-	@include breakpoint-down(mobile) {
-		padding-top: 7rem; 
-	}
+	// @include breakpoint-down(mobile) {
+	// 	padding-top: 7rem; 
+	// }
 
 	.widget__logo {
 		overflow: hidden;
@@ -45,9 +45,9 @@
 		height: 0.3rem;
 		background-color: #363636; 
 
-		@include breakpoint-down(mobile) {
-			top: 6.7rem;
-		}
+		// @include breakpoint-down(mobile) {
+		// 	top: 6.7rem;
+		// }
 
 		&:after {
 			content: '';
@@ -103,25 +103,20 @@
 	.widget__aside {
 		margin-left: 2.6%; 
 
-		@include breakpoint-down(mobile) {
-			margin-left: 0;
-			position: absolute; 
-			left: 1.5rem; 
-			top: 1rem; 
-		}
+		// @include breakpoint-down(mobile) {
+		// 	margin-left: 0;
+		// 	position: absolute; 
+		// 	left: 1.5rem; 
+		// 	top: 1rem; 
+		// }
 	}
 
 	.widget__content {
 		margin-left: 1.7%; 
 		padding-bottom: 1rem; 
-		width: 33rem;
-
-		@include breakpoint-down(large-desktop) {
-			width: 29rem;
-		}
+		min-width: 28rem;
 
 		@include breakpoint-down(small-desktop) {
-			width: 26rem;
 			padding-bottom: 0; 
 		}
 
@@ -163,6 +158,10 @@
 
 	.widget__actions {
 		margin: 0 auto;
+
+		// @include breakpoint-down(mobile) {
+		// 	margin: 0 0 0 1rem;
+		// }
 	}
 
 	.widget__options {
@@ -171,16 +170,27 @@
 		flex-wrap: wrap;
 		align-items:center;
 
+		// @include breakpoint-down(xl-desktop) {
+		// 	margin-left: 2rem; 
+		// }
+
 		@include breakpoint-down(xl-desktop) {
-			margin-left: 2rem; 
+			margin-left: 1rem; 
 		}
 
 		@include breakpoint-down(mobile) {
-			position: absolute; 
-			top: 1rem; 
-			right: 1.5rem; 
+			// position: absolute; 
+			// top: 1rem; 
+			// right: 1.5rem; 
+			margin-left: auto;
 		}
-
+		@media (max-width: 460px) {
+			margin-left: 30%;
+			// position: absolute; 
+			// bottom: 3rem; 
+			// top: 8rem;
+			// right: 1.5rem; 
+		}
 		>* {
 			+* {
 				margin-left: 2rem; 

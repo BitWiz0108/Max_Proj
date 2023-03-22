@@ -1,4 +1,4 @@
-
+body.attr("data-theme-version", "dark");
 
 function getUrlParams(dParam) {
 		var dPageURL = window.location.search.substring(1),
@@ -40,7 +40,6 @@ if(direction == 'rtl')
 	direction = 'ltr'; 
 }
 
-new dezSettings(dezSettingsOptions); 
 
 jQuery(window).on('resize',function(){
 	new dezSettings(dezSettingsOptions); 
