@@ -1,0 +1,16 @@
+/* ------------------------------------------------------------ *\
+	List Logos
+\* ------------------------------------------------------------ */
+
+.list-logos {
+	list-style-type: none; 
+	display:flex;
+	align-items:center;
+	justify-content:center;
+
+	li {
+		+ li {
+			margin-left: 1.6rem; 
+		}
+	}
+}

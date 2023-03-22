@@ -1,0 +1,17 @@
+/* ------------------------------------------------------------ *\
+	Link
+\* ------------------------------------------------------------ */
+
+.link {
+	display: inline-block; 
+	font-size: 1.9rem;
+	letter-spacing: 0.16em;
+	text-decoration: underline; 
+	text-decoration-color: transparent;
+	transition: text-decoration-color 0.3s;
+
+	&:hover {
+		text-decoration: underline; 
+		text-decoration-color: currentcolor;
+	}
+}

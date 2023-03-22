@@ -1,0 +1,87 @@
+/* ------------------------------------------------------------ *\
+	Popup
+\* ------------------------------------------------------------ */
+
+.popup {
+	position: fixed;
+	z-index: 13; 
+	top: 50%;
+	left: calc(50% + (26.7rem/2));
+	transform: translate(-50%,-50%);
+	height: 80%;
+	width: 45.8rem;
+	background-color: #323232; 
+	color:#fff;
+	font-size: 1.358rem;
+	filter: drop-shadow(0.6rem 0.6rem 1rem black);
+	transition: left 0.3s, opacity 0.3s;
+	opacity: 0;
+	pointer-events: none;
+
+	@include breakpoint-down(large-desktop) {
+		left: calc(50% + (25rem/2));
+	}
+
+	@include breakpoint-down(small-desktop) {
+		left: 50%;
+	}
+
+	@include breakpoint-down(mobile) {
+		width: 75%;
+	}
+
+	.popup__close {
+		background-color: #323232; 
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute; 
+		z-index: 3; 
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, -50%); 
+		width: 5rem;
+		height: 5rem;
+		border-radius: 50%;
+
+		@include breakpoint-down(mobile) {
+			left: 0;
+			top: 1rem;
+		}
+	}
+
+	.popup__content {
+		position: relative; 
+		z-index: 2; 
+		height: 100%;
+		overflow-y: auto;
+		text-align: center; 
+		padding: 4rem 4rem;
+	}
+
+	.popup__overlay {
+		content: '';
+		position: absolute;
+		z-index: -1; 
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		width: 150vw;
+		height: 100vh;
+		// background-color: red; 
+	}
+}
+
+.is-popup-visible {
+	.popup {
+		opacity: 1;
+		pointer-events:auto;
+	}
+}
+
+.min-aside {
+	.popup {
+		left: 50%;
+	}
+}
+

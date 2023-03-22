@@ -1,0 +1,31 @@
+/* ------------------------------------------------------------ *\
+	mCustomScrollbar
+\* ------------------------------------------------------------ */
+
+.mCustomScrollbar {
+	.mCSB_draggerContainer {
+		background-color: #393939; 
+			border-radius: 0.4rem;
+
+		.mCSB_dragger {
+			background-image: linear-gradient( to bottom, #0060ff 0%, #00319f 100%);
+			border-radius: 0.4rem;
+
+			> * {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.mCSB_horizontal.mCSB_inside > .mCSB_container {
+	margin-bottom: 2rem; 
+}
+
+.mCSB_scrollTools.mCSB_scrollTools_horizontal {
+	height: 0.8rem;
+
+	.mCSB_dragger .mCSB_dragger_bar {
+		margin: 0;
+	}
+}

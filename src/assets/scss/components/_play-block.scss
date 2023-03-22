@@ -1,0 +1,28 @@
+/* ------------------------------------------------------------ *\
+	Play Block
+\* ------------------------------------------------------------ */
+
+.play-block {
+	display:flex;
+	align-items:center;
+	
+	>* {
+		+ * {
+			margin-left: 2rem; 
+
+			@include breakpoint-down(tablet) {
+				margin-left: 1rem; 
+			}
+		}
+	}
+
+	.progress-ico {
+		@include breakpoint-down(mobile) {
+			margin-left: 4rem; 
+		}
+
+		@include breakpoint-down(small-desktop) {
+			margin-left: 2rem; 
+		}
+	}
+}

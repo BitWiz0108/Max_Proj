@@ -1,0 +1,354 @@
+/* ------------------------------------------------------------ *\
+	Section
+\* ------------------------------------------------------------ */
+
+.section {
+	--aside-width: 26.7rem;
+
+	@include breakpoint-down(large-desktop) {
+		--aside-width: 25rem;
+	}
+
+	display:flex;
+	flex-wrap: wrap;
+	min-height:100vh;
+
+	.section__aside {
+		--padding-x: 3.3rem;
+		width: var(--aside-width);
+		background-color: $c-gray; 
+		padding: 3rem 0; 
+		transition: margin-left 0.3s;
+
+		@include breakpoint-down(large-desktop) {
+			--padding-x: 3rem;
+		}
+
+		@include breakpoint-down(tablet) {
+			--padding-x: 2rem;
+
+			position: absolute;
+			z-index: 3; 
+			top: 0; 
+			left: 0; 
+			width: auto;
+			transition: background-color 0.3s;
+			border-radius: 0 0 2rem 0;
+			overflow: hidden;
+			padding: var(--padding-x) 0 0;
+		}
+
+		&-head {
+			text-align: right; 
+			padding-left:var(--padding-x);
+			padding-right:var(--padding-x);
+
+			@include breakpoint-down(tablet) {
+				text-align: center; 
+			}
+		}
+
+		&-logo {
+			margin-top: 4.4rem; 
+			padding-left:var(--padding-x);
+			padding-right:var(--padding-x);
+
+			@include breakpoint-down(large-desktop) {
+				margin-top: var(--padding-x); 
+			}
+
+			img {
+				width: 100%; 
+			}
+		}
+
+		&-nav {
+			margin-top: 4.3rem; 
+
+			@include breakpoint-down(large-desktop) {
+				margin-top: var(--padding-x); 
+			}
+
+			@include breakpoint-down(tablet) {
+				transition: opacity 0.3s;
+			}
+		}
+
+		&-access {
+			margin-top: 3.5rem; 
+			padding-left: 0.7rem; 
+
+			@include breakpoint-down(large-desktop) {
+				margin-top: var(--padding-x); 
+				padding: 0; 
+			}
+		}
+
+		&-logos {
+			margin-top: 6rem; 
+
+			@include breakpoint-down(large-desktop) {
+				margin-top: var(--padding-x); 
+			}
+		}
+
+		&-foot {
+			margin-top: 3.2rem;
+			text-align: center;  
+
+			@include breakpoint-down(large-desktop) {
+				margin-top: var(--padding-x); 
+			}
+		}
+
+		&-logo,
+		&-access,
+		&-logos,
+		&-foot {
+			transition: opacity 0.3s;
+
+			@include breakpoint-down(tablet) {
+				display: none; 
+			}
+		}
+
+		.nav {
+			transition: color 0.3s 0.2s;
+		}
+	}
+
+	.section__main {
+		position: relative;
+		width: 10%;
+		flex-grow:1;
+		transition: width 0.3s;
+
+		&-inner {
+			position: relative;
+			z-index: 2; 
+			height: 100%;
+			display:flex;
+			justify-content: center;
+			align-items: center;
+			padding: 4rem 4rem;
+
+			@include breakpoint-down(tablet) {
+				align-items:flex-end;
+				padding: 6rem 4rem 10rem;
+			}
+		}
+
+		.copyright-wrapper {
+			@include breakpoint-up(tablet) {
+				display: none; 
+			}
+			position: absolute; 
+			left: 0; 
+			bottom: 0; 
+			width: 100%;
+			padding-bottom: 2rem; 
+		}
+	}
+	
+	.section__media {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+
+
+		&:after {
+			@include breakpoint-down(tablet) {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-image: linear-gradient( to bottom, rgba($c-black,0) 40%, rgba($c-black,1) 60%);
+			}
+		}
+
+		&-inner {
+			position: absolute;
+			left: -1rem;
+			top: -1rem;
+			right: -1rem; 
+			bottom: -1rem; 
+			filter: blur(5px);
+			
+			@include breakpoint-down(tablet) {
+				bottom: calc(40% - 3rem);
+			}
+		}
+
+		video {
+			object-fit:cover;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.min-aside {
+	@include breakpoint-up(tablet) {
+		.section:not(.section--stream) {
+			--aside-close-width: 9.1rem;
+
+			@include breakpoint-down(large-desktop) {
+				--aside-close-width: 8rem;
+			}
+
+			.section__aside {
+				margin-left: calc(var(--aside-close-width) - var(--aside-width)); 
+
+				&-logo,
+				&-access,
+				&-logos,
+				&-foot {
+					opacity: 0;
+					pointer-events:auto;
+				}
+
+				.nav {
+					color: transparent; 
+					transition: color 0.15s 0s;
+
+					img {
+						left:calc(100% - (var(--aside-close-width) / 2 ));
+					}
+				}
+			}
+		}
+	}
+
+	@include breakpoint-down(tablet) {
+		.section:not(.section--stream) {
+			.section__aside {
+				background-color: transparent; 
+
+				&-nav {
+					opacity: 0;
+					pointer-events:none;
+				}
+			}
+		}
+	}
+}
+
+.section--stream {
+	@include breakpoint-down(small-desktop) {
+		--aside-close-width: 8rem;
+	}
+
+	.nav-trigger {
+		position: absolute; 
+		z-index: 13; 
+		top: var(--padding-x); 
+		left: var(--padding-x); 
+
+		@include breakpoint-down(small-desktop) {
+			transition: left 0.3s;
+		}
+	}
+
+	.section__aside {
+		padding-top: 5.2rem; 
+
+		@include breakpoint-down(small-desktop) {
+			--padding-x: 2rem;
+			
+			width: auto;
+			position: absolute;
+			z-index: 3; 
+			top: 0; 
+			left: 0; 
+			width: auto;
+			transition: margin 0.3s;
+			border-radius: 0 0 2rem 0;
+			overflow: visible;
+			padding: var(--padding-x) 0 0;
+			padding-top: 2rem; 
+		}
+
+		&-head {
+			@include breakpoint-down(small-desktop) {
+				text-align: center; 
+				min-height: 2.6rem;
+			}
+		}
+
+		&-logo,
+		&-access,
+		&-logos,
+		&-foot {
+			@include breakpoint-down(small-desktop) {
+				display: none; 
+			}
+		}
+	}
+
+	.section__main {
+		&-inner {
+			padding: 0;
+		}
+
+		.player {
+			min-height: 100%;
+			width: 100%;
+		}
+	}
+
+	.nav {
+		@include breakpoint-down(small-desktop) {
+			font-size: 0;
+			text-align: center; 
+		}
+
+		a {
+			@include breakpoint-down(small-desktop) {
+				padding: 2rem var(--padding-x);
+			}
+		}
+
+		img {
+			@include breakpoint-down(small-desktop) {
+				position: static;
+				transform: translate(0%,0%);
+			}
+		}
+	}
+}
+
+.min-aside {
+	.section {
+		--aside-close-width: 0rem;
+
+		.section__aside {
+			margin-left: calc(var(--aside-close-width) - var(--aside-width)); 
+		}
+	}
+
+	.nav-trigger {
+		@include breakpoint-down(small-desktop) {
+			left: 27rem;
+			width: 2.5rem;
+		}
+	}
+
+	.player {
+		.player__head {
+			@include breakpoint-up(small-desktop) {
+				padding-left: 10rem; 
+			}
+		}
+	}
+
+	.widget-player {
+		.widget__logo a {
+			margin-left:0;
+		}
+	}
+}

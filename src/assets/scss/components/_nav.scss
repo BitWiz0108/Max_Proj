@@ -1,0 +1,73 @@
+/* ------------------------------------------------------------ *\
+	Nav
+\* ------------------------------------------------------------ */
+
+.nav {
+	font-size: 1.6rem;
+	letter-spacing: 0.1em;
+
+	@include breakpoint-down(tablet) {
+		font-size: 0;
+		text-align: center; 
+	}
+
+	li {
+		border-top: 0.1rem solid #464646;
+		position: relative;
+
+		&:last-child {
+			border-bottom: 0.1rem solid #464646;
+		}
+
+		a {
+			position: relative;
+			z-index: 2; 
+			display: block; 
+			padding: 3.5rem 2rem 3.5rem 11.3rem;
+			text-decoration: none; 
+			background-image: linear-gradient( 90deg, rgba(14,25,89,0) 33.33%, rgb(14,25,89) 50%, rgb(39,60,205) 100%);
+			background-size: 300% 100%; 
+			background-position: 0% 0; 
+			transition: background-size 0.3s, background-position 0.5s; 
+
+			@include breakpoint-down(xl-desktop) {
+				padding: 2.5rem 2rem 2.5rem 11.3rem;
+			}
+
+			@include breakpoint-down(large-desktop) {
+				padding: 2.5rem 2rem 2.5rem 7rem;
+			}
+
+			@include breakpoint-down(tablet) {
+				padding: 2rem var(--padding-x);
+			}
+
+			img {
+				position: absolute;
+				top: 50%;
+				left: 7rem;
+				transform: translate(-50%,-50%);
+				transition: left 0.3s;
+
+				@include breakpoint-down(large-desktop) {
+					left: 4rem;
+				}
+
+				@include breakpoint-down(tablet) {
+					position: static;
+					transform: translate(0%,0%);
+				}
+			}
+		
+			&:hover {
+				background-size: 200% 100%; 
+				background-position: 100% 0; 
+			}
+		}
+
+		&.is-active a {
+			background-size: 200% 100%; 
+			background-position: 100% 0; 
+		}
+	}
+}

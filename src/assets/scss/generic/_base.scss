@@ -1,0 +1,81 @@
+/* ------------------------------------------------------------ *\
+	Base
+\* ------------------------------------------------------------ */
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	min-width: 320px;
+	background: #fff;
+	font-family: $ff-sans-serif;
+	font-weight: $font-weight-base;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	color: $c-white;
+}
+
+a {
+	color: inherit;
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&[href^="tel"] {
+		text-decoration: none;
+	}
+}
+
+
+.h1,h1,.h2,h2,.h3,h3,.h4,h4,.h5,h5,.h6,h6 {
+	margin-bottom: calc(#{$line-height-base}em / 2);
+}
+
+.h1,h1 { font-size: 3.6rem;   font-weight: 600; letter-spacing: 0.075em; font-family: $ff-titles; }
+.h2,h2 { font-size: 3rem;     font-weight: 300; }
+.h3,h3 { font-size: 2.3rem;   font-weight: 400; letter-spacing: 0.4em; }
+.h4,h4 { font-size: 2rem;     font-weight: 600; letter-spacing: 0.2em;   font-family: $ff-titles; }
+.h5,h5 { font-size: 1.7rem;   font-weight: 700; letter-spacing: 0.1em; }
+.h6,h6 { font-size: 1.375rem; font-weight: 600; letter-spacing: 0.2em; }
+
+@include breakpoint-down(mobile) {
+	.h1,h1 { font-size: 2.2rem; }
+	.h2,h2 { font-size: 2rem;   }
+	.h3,h3 { font-size: 1.8rem; }
+	.h4,h4 { font-size: 1.7rem;   } 
+	.h5,h5 { font-size: 1.5rem; }
+}
+
+p,
+ul,
+ol,
+dl,
+hr,
+table,
+blockquote {
+	margin-bottom: #{$line-height-base}em;
+}
+
+h1[class],
+h2[class],
+h3[class],
+h4[class],
+h5[class],
+h6[class],
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child,
+p:last-child,
+ul:last-child,
+ol:last-child,
+dl:last-child,
+table:last-child,
+blockquote:last-child {
+	margin-bottom: 0;
+}

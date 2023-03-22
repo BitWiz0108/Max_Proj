@@ -1,0 +1,33 @@
+/* ------------------------------------------------------------ *\
+	Fields
+\* ------------------------------------------------------------ */
+
+.field {
+	font-size: 1.9rem;
+	font-weight: 400; 
+	text-align: center;
+	text-align-last:center;
+	padding: 1rem 3.8rem 1rem 3rem; 
+	border: 0.2rem solid currentcolor;
+	background-color: transparent; 
+	width: 100%; 
+	transition: border 0.3s;
+	border-image-source: linear-gradient(to right, #fff, #fff);
+	border-image-slice: 1;
+	border-width:0 0 0.3rem;
+
+
+	&:focus {
+		border-image-source: linear-gradient(to right, #062084, #1138cf, #062084);
+	}
+}
+
+.validate--error {
+	.field {
+		border-image-source: linear-gradient(to right, #6a0211, #d72080, #6a0211);
+	}
+}
+
+/*  Field textarea  */
+.field--textarea {
+}

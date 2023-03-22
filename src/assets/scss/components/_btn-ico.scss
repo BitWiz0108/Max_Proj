@@ -1,0 +1,106 @@
+/* ------------------------------------------------------------ *\
+	Btn Ico
+\* ------------------------------------------------------------ */
+
+.btn-ico {
+	text-decoration: none; 
+	display: inline-block; 
+	font-size: 0;
+	position: relative; 
+	width: 6.7rem;
+	background-image: linear-gradient( 45deg, #363636 0%, #404040 100%);
+	box-shadow: 0px 20px 15px 0px rgba(1, 2, 2, 0.25);
+	border-radius: 50%;
+	color: $c-white;
+
+	@include breakpoint-down(xl-desktop) {
+		width: 5rem;
+	}
+
+	@include breakpoint-down(tablet) {
+		width: 4rem;
+	}
+
+	&:after {
+		content: '';
+		padding-top: 100%;
+		display: block;  
+		border-radius: 50%;
+		background-image: linear-gradient( 90deg, rgb(0,33,160) 0%, rgb(0,96,255) 100%);
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+
+	svg {
+		position: absolute;
+		z-index: 2; 
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		fill: currentColor;
+
+		@include breakpoint-down(xl-desktop) {
+			transform: translate(-50%,-50%) scale(0.8);
+		}
+
+		@include breakpoint-down(tablet) {
+			transform: translate(-50%,-50%) scale(0.6);
+		}
+	}
+
+	&--small {
+		width: 5.6rem;
+	
+		@include breakpoint-down(xl-desktop) {
+			width: 4.5rem;
+		}
+
+		@include breakpoint-down(tablet) {
+			width: 4rem;
+		}
+	}
+
+	&--big {
+		width: 8rem;
+
+		@include breakpoint-down(xl-desktop) {
+			width: 6.5rem;
+		}
+
+		@include breakpoint-down(tablet) {
+			width: 5.5rem;
+		}
+	}
+
+	&--play {
+		svg {
+			transition: opacity 0.3s;
+			+ svg {
+				opacity: 0;
+			}
+		}
+
+		&.is-played {
+			svg {
+				opacity: 0;
+				+ svg {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&--blue {
+		background-image: linear-gradient( to top, #1139d2 0%, #0096ff 100%);
+	}
+
+	&--txt-dark {
+		color: #272727;
+	}
+
+	&:hover {
+		&:after {
+			opacity: 1;
+		}
+	}
+}

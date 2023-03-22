@@ -1,0 +1,20 @@
+/* ------------------------------------------------------------ *\
+	Socials
+\* ------------------------------------------------------------ */
+
+.socials {
+
+	ul {
+		list-style-type: none; 
+
+		li {
+			+ li {
+				margin-top: 1.8rem; 
+
+				@include breakpoint-down(mobile) {
+					margin-top: 1rem; 
+				}
+			}
+		}
+	}
+}

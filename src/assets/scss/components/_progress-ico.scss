@@ -1,0 +1,20 @@
+/* ------------------------------------------------------------ *\
+	Progress Ico
+\* ------------------------------------------------------------ */
+
+.progress-ico {
+    display: inline-block; 
+	position: relative; 
+	font-size: 0; 
+
+    &:before{
+    	content: '';
+    	position: absolute;
+    	left: -0.2rem;
+    	top: -0.2rem;
+    	right: -0.2rem;
+    	bottom: -0.2rem;
+      	border-radius:50%;
+      	background:conic-gradient(#113ad3, #0095fe calc(var(--progress)*1%),#0000 0);
+    }
+}
