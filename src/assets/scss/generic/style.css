@@ -584,7 +584,7 @@ textarea.form-control {
   border-bottom-left-radius: 0
 }
 
-.btn {
+.btn-profile {
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
@@ -1134,12 +1134,18 @@ textarea.form-control {
   text-align: center !important
 }
 
+[data-theme-version="dark"] {
+  background: #24292d;
+  color: #b7b7b7;
+}
+
 .text-primary {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important
 }
 
 .text-black {
+  text-decoration: none;
   --bs-text-opacity: 1;
   color: rgba(var(--bs-black-rgb), var(--bs-text-opacity)) !important
 }

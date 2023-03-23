@@ -10,6 +10,8 @@
 	Generic
 \* ------------------------------------------------------------ */
 
+@import 'generic/style.css';
+@import 'generic/font-awesome.css';
 @import 'generic/variables';
 @import 'generic/functions';
 @import 'generic/mixins';
@@ -17,8 +19,6 @@
 @import 'generic/fonts';
 @import 'generic/base';
 @import 'generic/helpers';
-@import 'generic/style.css';
-@import 'generic/font-awesome.css';
 
 /* ------------------------------------------------------------ *\
 	Components
