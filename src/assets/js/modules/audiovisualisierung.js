@@ -16,21 +16,13 @@ $(function () {
 let $pressedElement = $('.input_fileexistence');
 
 $pressedElement.on('click', (e) => {
-	console.log("Let us check!!!!", e.delegateTarget.innerHTML == ` <a href="#" class="btn-ico btn-ico--blue btn-ico--play btn-ico--big">
-	<svg width="18px" height="24px">
-		<path fill-rule="evenodd"
-			d="M16.639,10.388 L2.423,0.694 C2.203,0.545 1.958,0.470 1.713,0.470 C1.467,0.470 1.222,0.545 1.002,0.694 C0.562,0.995 0.291,1.549 0.291,2.149 L0.291,21.535 C0.291,22.136 	0.562,22.690 1.002,22.990 C1.222,23.139 1.467,23.215 1.713,23.215 C1.958,23.215 2.203,23.140 2.423,22.990 L16.639,13.297 C17.079,12.997 17.350,12.443 17.350,11.842 	C17.350,11.242 17.079,10.688 16.639,10.388 Z">
-		</path>
-	</svg>
-	</a>`);
-
-	e.delegateTarget.innerHTML = ` <a href="#" class="btn-ico btn-ico--blue btn-ico--play btn-ico--big">
-		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="24px">
-			<path fill-rule="evenodd"
-				d="M14.242,23.209 L14.242,0.464 L19.929,0.464 L19.929,23.209 L14.242,23.209 ZM0.026,0.464 L5.713,0.464 L5.713,23.209 L0.026,23.209 L0.026,0.464 Z">
-			</path>
-		</svg> 
-	</a>`;
+	// e.delegateTarget.innerHTML = ` <a href="#" class="btn-ico btn-ico--blue btn-ico--play btn-ico--big">
+	// 	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="24px">
+	// 		<path fill-rule="evenodd"
+	// 			d="M14.242,23.209 L14.242,0.464 L19.929,0.464 L19.929,23.209 L14.242,23.209 ZM0.026,0.464 L5.713,0.464 L5.713,23.209 L0.026,23.209 L0.026,0.464 Z">
+	// 		</path>
+	// 	</svg> 
+	// </a>`;
 	e.preventDefault();
 	var ImgSrc = e.delegateTarget.previousElementSibling.querySelector("img").src.slice(0, -3);
 	const index = ImgSrc.lastIndexOf("/");

@@ -190,7 +190,7 @@ $playerVolume.each((index, volume) => {
 
 		        $playerVideoFullScreen[0].muted = !value>0;
 		        $playerVideoFullScreen[0].volume = value/100;
-		        $playerVideoFullScreen.attr("muted", !value>0);
+		        // $playerVideoFullScreen.attr("muted", !value>0);
 		    },
 		    change: function( event, ui ) {
 				let value = ui.value;
@@ -199,7 +199,7 @@ $playerVolume.each((index, volume) => {
 
 		        $playerVideoFullScreen[0].muted = !value>0;
 		        $playerVideoFullScreen[0].volume = value/100;
-		        $playerVideoFullScreen.attr("muted", !value>0);
+		        // $playerVideoFullScreen.attr("muted", !value>0);
 		    }
 		});
 })
